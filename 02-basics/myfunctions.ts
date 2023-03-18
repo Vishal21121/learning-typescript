@@ -21,7 +21,7 @@ console.log(val)
 signUpUser("vishal", "vishal.dev", false)
 loginUser("vishal", "vishal.dev")
 
-// this is the situation where we have to pass more than one data type hence we will learn ho to hanlde these cases in future.
+// this is the situation where we have to pass more than one data type hence we will learn ho to handle these cases in future.
 function getValue(myVal: number) {
     if (myVal > 5) {
         return true
@@ -39,7 +39,7 @@ const heros = [1,2,3]
 
 // so here typescript automatically understands the data type which is comming as paramter in hero.
 heros.map((hero) : string => `hero is ${hero}`)
-
+        
 
 function consoleError(errMsg:string):void{
     console.log(errMsg)

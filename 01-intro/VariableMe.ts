@@ -1,4 +1,6 @@
+// declaring the data type and here it is string
 let greetings: string = "Hello Vishal";
+
 let myNum = 6
 greetings.toLowerCase()
 console.log(greetings)
@@ -19,7 +21,7 @@ let isLoggedIn: boolean = false
 
 // When you don’t specify a type, and TypeScript can’t infer it from context, the compiler will typically default to any.
 
-// You usually want to avoid this, though, because any isn’t type-checked. Use the compiler flag noImplicitAny to flag any implicit any as an error.
+// You usually want to avoid this, though, because "any" isn’t type-checked. Use the compiler flag noImplicitAny to flag any implicit "any" as an error.
 
 let hero;
   
