@@ -51,21 +51,4 @@ function handleError(errMsg:string):never{
     throw new Error(errMsg);
 }
 
-// creating a type aliase and here type is a typescript keyword
-type User = {
-    name:string;
-    email:string;
-    isActive: boolean
-}
-
-// by this we can make create alias for boolean as bool and we can either use boolean or bool 
-// type bool = boolean;
-
-// here we are taking parameter as User and returning with User data type as well.
-function createUser(user: User):User{
-    return user
-}
-
-createUser({name:"",email:"",isActive:true})
-
 export {}
