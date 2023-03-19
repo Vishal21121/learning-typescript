@@ -15,10 +15,28 @@ interface User {
     getCoupon(couponName: string, value: number): number
 }
 
-const vishal: User = {
-    dbId: 22, email: "vishal1@gmail.com", userId: 121, startTrial: () => { return " hello " },
+//* it is called reopening of interface in which we add more fields to a particular interface
+//* here githubToken field has been added to User
+interface User {
+    githubToken: string
+}
+
+//* Inheritance in interface
+//* here Admin gets all the properties of User
+//* we can extend multiple interface using comma
+interface Admin extends User {
+    role: "admin" | "ta" | "learner"
+}
+
+
+const vishal: Admin = {
+    dbId: 22, email: "vishal1@gmail.com",
+    role:"admin",
+    userId: 121,
+    githubToken: "github",
+    startTrial: () => { return " hello " },
     //* parameter name can be different from the thing provided in definition of User
-    getCoupon: (name: "vishal10", off:10) => 10
+    getCoupon: (name: "vishal10", off: 10) => 10
 }
 
 vishal.email = "hello@gmail.com"
