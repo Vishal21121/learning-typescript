@@ -1,9 +1,24 @@
 "use strict";
 // console.log("typescript is here")
 // console.log("typescript is amazing")
+// class User{
+//     //* we have to declare the variables which we want to use in this class in typescript
+//     //* whatever we don't mark as private are public in js
+//     //* public and private are keywords from typescript not in javascript
+//     public email:string
+//     private name:string
+//     // this is the way to make anything private in js
+//     // #name:string
+//     readonly city:string = "Kolkata"
+//     constructor(email:string,name:string){
+//         this.email = email
+//         this.name = name
+//     }
+// }
 class User {
     constructor(email, name) {
-        this.city = "Kolkata";
+        this.email = email;
+        this.name = name;
         this.email = email;
         this.name = name;
     }
