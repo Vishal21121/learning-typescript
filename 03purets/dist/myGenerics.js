@@ -19,3 +19,14 @@ function identityFour(val) {
 }
 //* calling the function identityFour
 identityFour({ brand: "Milton", type: 1 });
+function getSearchProducts(products) {
+    // do some database operations
+    const myIndex = 3;
+    return products[myIndex];
+}
+//* while working with react this , after T in <T,> is given intentionally so that it can be separated from jsx
+const getMoreSearchProducts = (products) => {
+    // do some database operations
+    const myIndex = 4;
+    return products[myIndex];
+};
