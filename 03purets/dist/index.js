@@ -19,6 +19,8 @@ class User {
     constructor(email, name) {
         this.email = email;
         this.name = name;
+        // private _coureseCount = 1
+        //* protected members can be accessed within the class and in the class which is extending it but not by any object of any class.
         this._coureseCount = 1;
         this.city = "Kolkata";
         this.email = email;
@@ -43,6 +45,15 @@ class User {
             throw new Error("courese count should be more than 1");
         }
         this._coureseCount = coureseNum;
+    }
+}
+class SubUser extends User {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCourseCount() {
+        this._coureseCount = 4;
     }
 }
 const vishal = new User("vishal@gmail.com", "vishal");

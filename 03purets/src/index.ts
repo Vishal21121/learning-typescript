@@ -18,7 +18,10 @@
 
 class User {
 
-    private _coureseCount = 1
+    // private _coureseCount = 1
+
+    //* protected members can be accessed within the class and in the class which is extending it but not by any object of any class.
+    protected _coureseCount = 1
 
     readonly city: string = "Kolkata"
     constructor(
@@ -55,6 +58,15 @@ class User {
     }
 
 
+
+
+}
+
+class SubUser extends User{
+    isFamily : boolean = true
+    changeCourseCount(){
+        this._coureseCount = 4
+    }
 }
 
 const vishal = new User("vishal@gmail.com", "vishal")
