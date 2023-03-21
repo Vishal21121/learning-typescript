@@ -19,8 +19,30 @@ class User {
     constructor(email, name) {
         this.email = email;
         this.name = name;
+        this._coureseCount = 1;
+        this.city = "Kolkata";
         this.email = email;
         this.name = name;
+    }
+    //* as this is a private property so it cannot be accessed outside the class
+    deleteToken() {
+        console.log("Token deleted");
+    }
+    // getter function
+    get getAppleEmail() {
+        return `apple${this.email}`;
+    }
+    // returning the value of the private variable
+    get courseCount() {
+        return this._coureseCount;
+    }
+    //* In typescript, setter should not have any statement indicating the return
+    //* as in this function there is no return function
+    set courseCount(coureseNum) {
+        if (coureseNum <= 1) {
+            throw new Error("courese count should be more than 1");
+        }
+        this._coureseCount = coureseNum;
     }
 }
 const vishal = new User("vishal@gmail.com", "vishal");
