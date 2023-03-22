@@ -30,3 +30,21 @@ const getMoreSearchProducts = (products) => {
     const myIndex = 4;
     return products[myIndex];
 };
+//* allowing multiple generics and one generics is extending another data type
+//* although we are using generics we are limiting the data type to Database interface only
+function anotherFunction(valOne, valTwo) {
+    return {
+        valOne,
+        valTwo
+    };
+}
+anotherFunction("hello", { connection: "", username: "", password: "" });
+//* there are two sellable items and we are taking any thing among them as we are using generics
+class Sellable {
+    constructor() {
+        this.cart = [];
+    }
+    addToCart(product) {
+        this.cart.push(product);
+    }
+}

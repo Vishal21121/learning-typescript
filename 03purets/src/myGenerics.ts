@@ -44,3 +44,44 @@ const getMoreSearchProducts = <T,>(products:T[]):T=>{
     const myIndex = 4
     return products[myIndex]
 }
+
+interface Database{
+    connection:string,
+    username:string
+    password:string
+}
+
+//* allowing multiple generics and one generics is extending another data type
+//* although we are using generics we are limiting the data type to Database interface only
+
+function anotherFunction<T, U extends Database>(valOne: T, valTwo: U):object{
+    return {
+        valOne,
+        valTwo
+    }
+}
+
+
+anotherFunction("hello",{connection:"",username:"",password:""})
+
+
+
+interface Quiz{
+    name:string,
+    type:string
+}
+
+interface Course{
+    name:string,
+    author:string,
+    subject:string
+}
+
+//* there are two sellable items and we are taking any thing among them as we are using generics
+class Sellable<T>{
+    public cart: T[] = []
+
+    addToCart(product:T){
+        this.cart.push(product)
+    }
+}
