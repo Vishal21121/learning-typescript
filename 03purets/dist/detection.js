@@ -26,3 +26,9 @@ function printAll(strs) {
         }
     }
 }
+function findAdmin(account) {
+    //* we are checking whether isAdmin key is present in account
+    if ("isAdmin" in account) {
+        return account.isAdmin;
+    }
+}
