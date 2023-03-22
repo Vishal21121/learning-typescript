@@ -31,20 +31,59 @@ function printAll(strs: string | string[] | null) {
 
 //* In operator narrowing
 
-interface User{
-    name:string,
-    email:string
+interface User {
+    name: string,
+    email: string
 }
 
-interface Admin{
-    name:string,
-    email:string,
-    isAdmin:boolean
+interface Admin {
+    name: string,
+    email: string,
+    isAdmin: boolean
 }
 
-function findAdmin(account: User | Admin){
+function findAdmin(account: User | Admin) {
     //* we are checking whether isAdmin key is present in account
-    if("isAdmin" in account){
+    if ("isAdmin" in account) {
         return account.isAdmin
+    }
+}
+
+//* Instance of Narrowing
+
+function logValue(x: Date | string) {
+    //* here we are checking whether x is instance of Date or not
+    //* instance of opearator is ued when there use of new keyword
+    if (x instanceof Date) {
+        console.log(x.toUTCString());
+    } else {
+        console.log(x.toUpperCase());
+
+    }
+}
+
+//* type predicates
+
+type Fish = {
+    swim: () => void
+}
+
+type Bird = {
+    fly: () => void
+}
+
+//* by writing pet is Fish we are returning that pet is Fish and not true or false
+function isFish(pet: Fish | Bird): pet is Fish {
+    //* while writing pet as Fish we typecasted pet to Fish and then we are checking whether the swim property is there or not 
+    return (pet as Fish).swim !== undefined
+}
+
+function getFood(pet: Fish | Bird){
+    if(isFish(pet)){
+        pet
+        return "fish food"
+    }else{
+        pet
+        return "bird food"
     }
 }

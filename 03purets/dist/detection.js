@@ -32,3 +32,29 @@ function findAdmin(account) {
         return account.isAdmin;
     }
 }
+//* Instance of Narrowing
+function logValue(x) {
+    //* here we are checking whether x is instance of Date or not
+    //* instance of opearator is ued when there use of new keyword
+    if (x instanceof Date) {
+        console.log(x.toUTCString());
+    }
+    else {
+        console.log(x.toUpperCase());
+    }
+}
+//* by writing pet is Fish we are returning that pet is Fish and not true or false
+function isFish(pet) {
+    //* while writing pet as Fish we typecasted pet to Fish and then we are checking whether the swim property is there or not 
+    return pet.swim !== undefined;
+}
+function getFood(pet) {
+    if (isFish(pet)) {
+        pet;
+        return "fish food";
+    }
+    else {
+        pet;
+        return "bird food";
+    }
+}
